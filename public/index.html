@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/Game.css">
+    <title> Juego de Memoria</title>
+</head>
+<body>
+    <div id="todo", class="todo">
+    <div id="intro">
+        <div class="imgIntroPokemon">
+        </div>
+        <div class="ingresaNombreIntro">
+            <h2 class="textPokemon marginCero textIluminado">Bienvenido, ingresa tu nombre<img src="styles/img/6.png" alt=""></h2>
+                <input type="text" id="userName" class="userNameInput  textPequeño" placeholder="ingresa nombre" >
+               <p id="nombreLargo" style="border-bottom:solid 3px red; font-size: 15px; font-weight: 800; display: none;"></p>
+                <button id="ok" class="buttonIntereacrivo textPokemon" onclick="Iniciar()">OK</button>
+        </div>
+    </div>
+    <div id="desafio" class="desafio">
+        <div>
+            <h3 class="textTitulos marginCero ">Desafio</h3>
+        </div>
+        <article id="targetDesafio" class="targetDesafio">
+            <img src="styles/img/6.png" alt="">
+            <p class="textPokemon textMediano marginCero textIluminado" id="desafioNombre"></p>
+                <button class="buttonIntereacrivo" id="desafioGo" onclick="AceptarDesafio()">Go</button>
+        </article>
+    </div>
+    <h1 class="textPokemon textIluminado" id="h1">Memoriza el pokemon <br> <br> <img src="styles/img/6.png" alt=""><img src="styles/img/7.png" alt=""><img src="styles/img/3.png" alt=""> </h1>
+    <!-- <h1 id="h2"></h1> -->
+    
+    <button class="textPokemon marginCero textIluminado backgorundYellow" id="multiplayer" >Multi Jugador</button>
+    <div id="mulltiplayerContainer">
+        <div id="containerAmigos">
+            <h2>juadores conectados</h2>
+            <div id="juagadoresconectados"></div>
+        </div>
+        
+    </div>
+    <div id="jugadorVsjuagador" class="jugadorVsjuagadorclass">
+        <h2 id="player1" class="textPokemon textIluminado textMediano">player 1 </h2><img src="styles/img/versus.png" alt="" class="imgMediana"><h2 id="player2" class="textPokemon textIluminado textMediano">player 2</h2>
+    </div>
+    <div id="mostrarResultado" class="jugadorVsjuagadorclass">
+        
+    </div>
+    
+    <main id="main" class="mainOffLiine">
+        <section id="section1" class="section1">
+            <button class="marginCero" id="0" onclick="destapar(0); destMultiplayer(0)"></button>
+            <button class="marginCero" id="1" onclick="destapar(1); destMultiplayer(1)"></button>
+            <button class="marginCero" id="2" onclick="destapar(2); destMultiplayer(2)"></button>
+            <button class="marginCero" id="3" onclick="destapar(3); destMultiplayer(3)"></button>
+
+            <button class="marginCero" id="4" onclick="destapar(4); destMultiplayer(4)"></button>
+            <button class="marginCero" id="5" onclick="destapar(5); destMultiplayer(5)"></button>
+            <button class="marginCero" id="6" onclick="destapar(6); destMultiplayer(6)"></button>
+            <button class="marginCero" id="7" onclick="destapar(7); destMultiplayer(7)"></button>
+
+            <button class="marginCero" id="8" onclick="destapar(8); destMultiplayer(8)"></button>
+            <button class="marginCero" id="9" onclick="destapar(9); destMultiplayer(9)"></button>
+            <button class="marginCero" id="10" onclick="destapar(10); destMultiplayer(10)"></button>
+            <button class="marginCero" id="11" onclick="destapar(11); destMultiplayer(11)"></button>
+            <button class="marginCero" id="12" onclick="destapar(12); destMultiplayer(12)"></button>
+            <button class="marginCero" id="13" onclick="destapar(13); destMultiplayer(13)"></button>
+            <button class="marginCero" id="14" onclick="destapar(14); destMultiplayer(14)"></button>
+            <button class="marginCero" id="15" onclick="destapar(15); destMultiplayer(15)"></button>
+        </section>
+        <section id="section2" class="section2">
+            <h2 id="aciertos" class="estadisticas">Aciertos: 0</h2>
+            <h2 id="time" class="estadisticas"> Tiempo: 30 segundos </h2>
+            <h2 id="movimientos" class="estadisticas">Movimientos: 0</h2>
+
+        </section>
+        <div id="turnoDe">
+            <img class="imgPequeña" id="imgTurnos" src="styles/img/fight.png" alt="">
+            <h1 id="turnoPlayer"  class="textPokemon textIluminado marginCero"></h1>
+            <img class="imgPequeña" id="aceptarRevancha" onclick="AceptarRevancha()" src="styles/img/gotcha.png" alt=""> 
+        </div>
+
+    </main>
+    <div>
+        <h1 id="fallaste">Fallaste</h1>
+         <button id="reintentar"  onclick="reintentar()">Reintentar</button>
+    </div>
+    <footer>
+        <p>Juego programado por David Castro</p>
+    </footer>
+
+<button id="prueba" onclick="JugarOtraVezOnline()"> prueba</button>
+</div>
+    
+    <script src="Game.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="multiplayer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
