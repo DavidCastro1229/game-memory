@@ -72,6 +72,8 @@ canvas{
     height:50px;
 }
 .mainOffLiine{
+    display:flex;
+    justify-content: center;
     margin:0;
     height: 300PX;
     width:100%;
@@ -79,14 +81,23 @@ canvas{
     align-items: center;
     border:10px;
 }
+.mainOffLiine button{
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .mainOnLiine{
     position: relative;
     display: grid;
     height: 500PX;
 
 }
-.section1{
+
+@media screen and (min-width:1000px) {
     
+}
+.section1{
     margin-top: 7px;
     padding: 10px;
     background-color: rgba(255,255,255,0.3);
@@ -94,16 +105,17 @@ canvas{
      width: 70%;
     display:grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 65px);
+    grid-template-rows: repeat(4, 23%);
     gap:10px 10px;
     border-radius: 10px;
     transition: 1s;
 }
+
 .section1Multiplayer{
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(4, 85px);
     gap:5px 5px;
-    width:95vw
+    width:95vw;
 }
 
 .section2{
@@ -295,7 +307,34 @@ footer p{
     visibility: hidden;
     position:absolute;
     top:0;
-    height: 70%;
+    height: 72%;
     width:100%;
     transition: 1s;
+}
+@media screen and (min-width:600px){
+    .mainOffLiine{
+        height: 500px;
+    }
+    .section1{
+        width: 50%;
+    }
+    .section1 img{
+        width: 80%;
+        height: 90%;
+    }
+    .section1Multiplayer{
+        width:60vw;
+    }
+    .jugadorVsjuagadorclass{
+        width:60vw
+    }
+    #mulltiplayerContainer{
+        width:60vw
+    }
+    #turnoDe{
+        height: 74%;
+        width: 62%;
+        left: 0;
+        transform: translateX(31%);
+    }
 }
